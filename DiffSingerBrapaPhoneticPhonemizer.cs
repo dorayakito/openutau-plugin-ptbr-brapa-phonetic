@@ -8,7 +8,7 @@ using OpenUtau.Core.DiffSinger;
 
 namespace OpenUtau.Plugin.PtBrBrapa;
 
-[Phonemizer("DiffSinger Portuguese BRAPA Phonetic (Saturno)", "DIFFS PT BRAPA PHONETIC", language: "PT", author: "Saturno")]
+[Phonemizer("DiffSinger BRAPA Phonetic (xiao)", "DIFFS PT BRAPA PHONETIC", language: "PT", author: "xiao")]
 public sealed class DiffSingerBrapaPhoneticPhonemizer : DiffSingerBasePhonemizer {
     public override string GetLangCode() => string.Empty;
 

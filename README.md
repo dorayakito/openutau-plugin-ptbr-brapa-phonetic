@@ -25,7 +25,7 @@ Este phonemizer dispensa o uso de dicionários G2P baseados em palavras escritas
    - **macOS**: `~/Library/Application Support/OpenUtau/Plugins/` (ou dentro do App)
    - **Windows**: `%AppData%/OpenUtau/Plugins/`
    - **Linux**: `~/.config/OpenUtau/Plugins/`
-3. No OpenUtau, selecione a trilha DiffSinger e escolha o phonemizer **`DiffSinger Portuguese BRAPA Phonetic (Saturno)`** (código: `DIFFS PT BRAPA PHONETIC`).
+3. No OpenUtau, selecione a trilha DiffSinger e escolha o phonemizer **`DiffSinger BRAPA Phonetic (xiao)`** (código: `DIFFS PT BRAPA PHONETIC`).
 
 ---
 
