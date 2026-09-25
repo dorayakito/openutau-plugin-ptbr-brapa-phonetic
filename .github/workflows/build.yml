@@ -28,10 +28,12 @@ jobs:
       - name: Download OpenUtau dependencies
         run: |
           mkdir -p libs
-          curl -sL https://github.com/stakira/OpenUtau/releases/latest/download/OpenUtau-osx-x64.zip -o openutau.zip
+          LATEST_TAG=$(curl -s https://api.github.com/repos/stakira/OpenUtau/releases | jq -r '.[0].tag_name')
+          echo "Using OpenUtau tag: $LATEST_TAG"
+          curl -sL "https://github.com/stakira/OpenUtau/releases/download/${LATEST_TAG}/OpenUtau-win-x64.zip" -o openutau.zip
           unzip -q openutau.zip -d openutau_extracted
-          cp openutau_extracted/OpenUtau.app/Contents/MacOS/OpenUtau.Core.dll libs/
-          cp openutau_extracted/OpenUtau.app/Contents/MacOS/YamlDotNet.dll libs/
+          cp openutau_extracted/OpenUtau.Core.dll libs/
+          cp openutau_extracted/YamlDotNet.dll libs/
 
       - name: Build Plugin
         run: dotnet build OpenUtau.Plugin.PtBrBrapa.csproj -c Release -o output
