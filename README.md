@@ -2,11 +2,11 @@
 
 Phonemizer fonético direto para DiffSinger com bancos de voz em Português Brasileiro (BRAPA / Saturno) para o [OpenUtau](https://github.com/stakira/OpenUtau).
 
-Este plugin dispensa o uso de dicionários G2P baseados em palavras escritas, permitindo que você digite os próprios fones (separados por espaço ou diretamente no lyric), garantindo total precisão fonética e controle sobre a pronúncia.
+Este phonemizer dispensa o uso de dicionários G2P baseados em palavras escritas, permitindo que você digite os próprios fones (separados por espaço ou diretamente no lyric), garantindo total precisão fonética e controle sobre a pronúncia.
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 - **Entrada Direta por Fones**: Digite sequências fonéticas como `oh r a s`, `k a z a`, `b o m`, etc.
 - **Suporte ao conjunto de fones BRAPA**:
@@ -18,7 +18,7 @@ Este plugin dispensa o uso de dicionários G2P baseados em palavras escritas, pe
 
 ---
 
-## 📦 Como Instalar
+## Como Instalar
 
 1. Baixe ou compile a `.dll` (`OpenUtau.Plugin.PtBrBrapa.dll`).
 2. Copie a DLL para a pasta `Plugins` do seu OpenUtau:
@@ -29,7 +29,7 @@ Este plugin dispensa o uso de dicionários G2P baseados em palavras escritas, pe
 
 ---
 
-## 🛠️ Compilação
+## Compilação
 
 Para compilar via linha de comando com .NET 8 SDK:
 
@@ -39,6 +39,6 @@ dotnet build OpenUtau.Plugin.PtBrBrapa.csproj -c Release
 
 ---
 
-## 📄 Licença
+## Licença
 
 Distribuído sob licença MIT.
