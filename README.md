@@ -8,7 +8,7 @@ Este phonemizer dispensa o uso de dicionários G2P baseados em palavras escritas
 
 ## Funcionalidades
 
-- **Entrada Direta por Fones**: Digite sequências fonéticas como `oh r a s`, `k a z a`, `b o m`, etc.
+- **Entrada Direta por Fones**: Digite sequências fonéticas como `oh r a s`, `k a z a`, `b on`, etc.
 - **Suporte ao conjunto de fones BRAPA**:
   - **Vogais e Nasais**: `a`, `e`, `i`, `o`, `u`, `eh`, `oh`, `an`, `en`, `in`, `on`, `un`, `ae`, `ax`, `i0`, `u0`, etc.
   - **Semivogais**: `w`, `y`
