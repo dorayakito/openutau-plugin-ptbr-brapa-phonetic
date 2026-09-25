@@ -15,26 +15,6 @@ public sealed class DiffSingerBrapaPhoneticPhonemizer : DiffSingerBasePhonemizer
     BrapaPhoneticG2p? bankG2p;
     protected override IG2p LoadG2p(string rootPath, bool useLangId = false) => bankG2p = LoadForBank(rootPath);
 
-    protected override void ProcessPart(Note[][] phrase) {
-        var prepared = phrase.Select(group => (Note[])group.Clone()).ToArray();
-        var errors = new Dictionary<int, string>();
-        foreach (var group in prepared) {
-            try {
-                if (!string.IsNullOrWhiteSpace(group[0].phoneticHint)) {
-                    bankG2p!.UnpackHint(group[0].phoneticHint);
-                } else {
-                    bankG2p!.Query(group[0].lyric);
-                }
-            } catch (InvalidDataException e) {
-                errors[group[0].position] = e.Message;
-                group[0].lyric = "SP";
-                group[0].phoneticHint = string.Empty;
-            }
-        }
-        base.ProcessPart(prepared);
-        foreach (var error in errors) { unrecognizedLyrics[error.Key] = error.Value; }
-    }
-
     public static BrapaPhoneticG2p LoadForBank(string durationDirectory) {
         var configs = Path.GetFullPath(Path.Combine(durationDirectory, ".."));
         var paths = new[] {
