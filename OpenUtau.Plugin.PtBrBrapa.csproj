@@ -5,13 +5,25 @@
     <LangVersion>12</LangVersion>
     <AssemblyName>OpenUtau.Plugin.PtBrBrapa</AssemblyName>
   </PropertyGroup>
-  <ItemGroup>
+
+  <ItemGroup Condition="'$(GITHUB_ACTIONS)' != 'true' and Exists('/Applications/OpenUtau.app/Contents/MacOS/OpenUtau.Core.dll')">
     <Reference Include="OpenUtau.Core">
       <HintPath>/Applications/OpenUtau.app/Contents/MacOS/OpenUtau.Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>/Applications/OpenUtau.app/Contents/MacOS/YamlDotNet.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(GITHUB_ACTIONS)' == 'true' or !Exists('/Applications/OpenUtau.app/Contents/MacOS/OpenUtau.Core.dll')">
+    <Reference Include="OpenUtau.Core">
+      <HintPath>libs/OpenUtau.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>libs/YamlDotNet.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

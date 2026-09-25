@@ -10,7 +10,6 @@ public sealed class BrapaPhoneticG2p : IG2p {
     readonly IG2p symbols;
     readonly HashSet<string> supported;
 
-    // Normalizations/aliases for user convenience
     static readonly Dictionary<string, string> Aliases = new(StringComparer.OrdinalIgnoreCase) {
         ["c"] = "k",
         ["q"] = "k",
@@ -40,7 +39,7 @@ public sealed class BrapaPhoneticG2p : IG2p {
         ["un"] = "un",
         ["ae"] = "ae",
         ["ax"] = "ax",
-        ["ah"] = "ax", // BRAPA alias support
+        ["ah"] = "ax",
         ["i0"] = "i0",
         ["u0"] = "u0",
         ["w"] = "w",
@@ -97,13 +96,11 @@ public sealed class BrapaPhoneticG2p : IG2p {
             clean = mapped;
         }
 
-        // Try direct pt/ prefix
         var prefixed = $"pt/{clean}";
         if (IsValidSymbol(prefixed)) {
             return prefixed;
         }
 
-        // If voicebank doesn't use pt/ prefix or uses bare tokens
         if (IsValidSymbol(clean)) {
             return clean;
         }
@@ -118,7 +115,6 @@ public sealed class BrapaPhoneticG2p : IG2p {
         if (trimmed.Equals("br", StringComparison.OrdinalIgnoreCase)) return ["AP"];
         if (trimmed is "SP" or "AP" or "-") return [trimmed == "AP" ? "AP" : "SP"];
 
-        // Split by whitespace
         var parts = trimmed.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries);
         var result = new List<string>();
 
